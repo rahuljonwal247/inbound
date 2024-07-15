@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Pallets</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="container">
+    <h1>Pallets</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Production Line</th>
+          <th>Process Order</th>
+          <th>SKU Code</th>
+          <th>SKU Desc</th>
+          <th>SUT</th>
+          <th>Transfer Order</th>
+          <th>PalletId</th>
+          <th>Pallet Qty</th>
+          <th>Assigned to</th>
+          <th>Bin #</th>
+          <th>3 digitCode</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pallets.forEach(pallet => { %>
+          <tr>
+            <td><%= pallet.date %></td>
+            <td><%= pallet.productionLine %></td>
+            <td><%= pallet.processOrder %></td>
+            <td><%= pallet.skuCode %></td>
+            <td><%= pallet.skuDesc %></td>
+            <td><%= pallet.sut %></td>
+            <td><%= pallet.transferOrder %></td>
+            <td><%= pallet._id %></td>
+            <td><%= pallet.palletQty %></td>
+            <td><%= pallet.assignedTo %></td>
+            <td><%= pallet.bin%></td>
+            <td><%= pallet. digitCode %></td>
+            <td><%= pallet.status %></td>
+            <td>
+              <form action="/pallet/<%= pallet.id %>?_method=PUT" method="POST" class="d-inline">
+                <input type="text" name="bin" placeholder="Bin" required>
+                <input type="number" name="palletQty" placeholder="Pallet Qty" required>
+                <button type="submit" class="btn btn-warning">Edit</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <%- include('partials/footer') %>
+
+  <script src="/scripts.js"></script>
+</body>
+</html> -->
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Pallets</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="container mt-4 ml-10 mr-10">
+    <h1 class="mb-4">Pallets</h1>
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Date</th>
+          <th>Production Line</th>
+          <th>Process Order</th>
+          <th>SKU Code</th>
+          <th>SKU Desc</th>
+          <th>SUT</th>
+          <th>Transfer Order</th>
+          <th>PalletId</th>
+          <th>Pallet Qty</th>
+          <th>Assigned to</th>
+          <th>Bin #</th>
+          <th>3 digit Code</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pallets.forEach(pallet => { %>
+          <tr>
+            <td><%= pallet.date %></td>
+            <td><%= pallet.productionLine %></td>
+            <td><%= pallet.processOrder %></td>
+            <td><%= pallet.skuCode %></td>
+            <td><%= pallet.skuDesc %></td>
+            <td><%= pallet.sut %></td>
+            <td><%= pallet.transferOrder %></td>
+            <td><%= pallet._id %></td>
+            <td><%= pallet.palletQty %></td>
+            <td><%= pallet.assignedTo %></td>
+            <td><%= pallet.binNumber %></td>
+            <td><%= pallet.digitCode %></td>
+            <td><%= pallet.status %></td>
+            <td>
+              <form action="/pallet/<%= pallet._id %>?_method=PUT" method="POST" class="d-inline">
+                <div class="form-group mb-2">
+                  <input type="text" name="bin" placeholder="Bin" class="form-control form-control-sm" required>
+                </div>
+                <div class="form-group mb-2">
+                  <input type="number" name="palletQty" placeholder="Pallet Qty" class="form-control form-control-sm" required>
+                </div>
+                <button type="submit" class="btn btn-warning btn-sm">Edit</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <%- include('partials/footer') %>
+
+  <script src="/scripts.js"></script>
+</body>
+</html> 
+
+
+
+
